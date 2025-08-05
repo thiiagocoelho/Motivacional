@@ -1,5 +1,3 @@
-// frase.js
-
 const frases = [
     "Comece onde você está. Use o que você tem. Faça o que você pode.",
     "Acredite em você mesmo e tudo será possível.",
@@ -36,12 +34,10 @@ const frases = [
 
 let dataDaFraseExibida = localStorage.getItem('dataDaFrase') || '';
 
-// Exporta a função para que ela possa ser usada em outros arquivos.
 export function atualizarFrase() {
     const hojeStr = new Date().toISOString().slice(0, 10);
     
     if (hojeStr === dataDaFraseExibida) {
-        // Se a data for a mesma, apenas garante que a frase do dia seja exibida.
         const fraseSalva = localStorage.getItem('fraseDoDia');
         if (fraseSalva) {
             document.getElementById('frase-motivacional').textContent = `"${fraseSalva}"`;
