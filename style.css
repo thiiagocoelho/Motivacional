@@ -80,8 +80,6 @@ h2 {
     min-height: 20px;
 }
 
-/* --- NOVOS ESTILOS PARA O CLIMA --- */
-
 .clima-container {
     margin-top: 30px;
     padding-top: 20px;
@@ -92,8 +90,8 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Espaço entre o ícone e o texto */
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 #clima-icone {
