@@ -1,4 +1,3 @@
-// Função para mapear o código do clima para o caminho de um ícone
 function getIconeClima(codigo) {
 
     const mapaIcones = {
@@ -10,16 +9,13 @@ function getIconeClima(codigo) {
         6: 'icones/chovendo.png',                   // Pancadas de chuva
         7: 'icones/chuvas-ligeiras-trovoada.png',   // Chuva ligeira, trovoadas possiveis
         8: 'icones/chovendo.png',             // Chuva fraca
-        9: 'icones/nublado-chuva.svg',          // Nublado com chuva
-        10: 'icones/nublado-chuva-leve.svg',     // Nublado com chuva fraca
-        11: 'icones/parcialmente-nublado-chuva.png', // Parcialmente nublado com chuva
+        9: 'icones/nublado-chuva.png',          // Nublado com chuva
         'default': 'icones/desconhecido.svg'     // Ícone para condições não mapeadas
     };
 
     return mapaIcones[codigo] || mapaIcones['default'];
 }
 
-// Função para traduzir o código do clima para uma descrição em português
 function traduzirCodigoClima(codigo) {
     const mapaClima = {
         1: 'Céu limpo',
@@ -31,8 +27,6 @@ function traduzirCodigoClima(codigo) {
         7: 'Chuva ligeira, trovoadas possiveis',
         8: 'Chuva fraca',
         9: 'Nublado com chuva',
-        10: 'Nublado com chuva fraca',
-        11: 'Parcialmente nublado com chuva',
     };
     return mapaClima[codigo] || 'Condição desconhecida';
 }
@@ -66,7 +60,7 @@ export async function buscarClima() {
         temperaturaEl.textContent = `Temp: ${temperaturaMin}°C - ${temperaturaMax}°C`;
         condicaoClimaEl.textContent = `Condição: ${descricaoClima}`;
         iconeEl.src = getIconeClima(codigoClima);
-        iconeEl.alt = descricaoClima; // Atualiza o texto alternativo da imagem
+        iconeEl.alt = descricaoClima;
 
     } catch (error) {
         console.error('Erro ao buscar clima:', error);
