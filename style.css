@@ -5,8 +5,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 130vh;
+    zoom: 75%;
     background: linear-gradient(135deg, #ebcb16 0%, #6ebcbe 70%, #64e6bf 100%);
     background-size: 400% 400%;
     animation: moverFundo 15s ease infinite;
@@ -35,6 +35,8 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 90%;
+    max-width: 600px;
 }
 
 .logo {
@@ -106,4 +108,39 @@ h2 {
 #clima-texto p {
     margin: 5px 0;
     font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    #dia-semana {
+        font-size: 1.5rem;
+    }
+
+    #data-atual {
+        font-size: 1.2rem;
+    }
+
+    #horario {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    #frase-motivacional {
+        font-size: 1rem;
+    }
+
+    #clima-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #clima-texto {
+        text-align: center;
+    }
 }
