@@ -31,11 +31,24 @@ function traduzirCodigoClima(codigo) {
     return mapaClima[codigo] || 'Condição desconhecida';
 }
 
+export function localizar() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            console.log(`Localização atual: Latitude ${lat}, Longitude ${lon}`);
 
-export async function buscarClima() {
+            buscarClima(lat, lon);
+        }, (error) => {
+            console.error('Erro ao obter localização:', error);
+        });
+    } else {
+        console.warn('Geolocalização não é suportada neste navegador.');
+    }
+}
+
+export async function buscarClima(lat, lon) {
     const apiKey = 'EUMyAe1SOJvsxXCr';
-    const lat = '-2.5307'; // Latitude para São Luís, MA
-    const lon = '-44.3068'; // Longitude para São Luís, MA
     const url = `https://my.meteoblue.com/packages/basic-day?lat=${lat}&lon=${lon}&apikey=${apiKey}&format=json`;
 
     try {
